@@ -4,15 +4,15 @@ public class Homework1 {
     public static void main(String[] args) throws Exception {
 
         // Вычислить сумма чисел от 1 до n
-        // System.out.println(sumOfNums(inputNum("Введите число -> ")));
+        System.out.println(sumOfNums(inputNum("Введите число -> ")));
 
         // Вывести все простые числа от 1 до 1000
 
-        // primeNumbers();
+        primeNumbers();
 
         // Реализовать простой калькулятор
 
-        // System.out.print(calculator());
+        System.out.print(calculator());
 
         // Задано уравнение вида q + w = e, q, w, e >= 0. Некоторые цифры могут быть
         // заменены знаком вопроса,
