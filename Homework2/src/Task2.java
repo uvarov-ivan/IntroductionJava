@@ -18,15 +18,15 @@ public class Task2 {
         return newArray;
     }
 
-    public static void logging() {
+    public static Logger logging(String logFileName) {
         
-        Logger logger = Logger.getLogger(Task2.class.getName()); // Указываем имя вашего класса
+        Logger logger = Logger.getLogger(Task2.class.getName());
         logger.setLevel(Level.FINE);
-        logger.setUseParentHandlers(false); // отключаем передачу в родителя
+        logger.setUseParentHandlers(false);
 
-        // Подключаем хендлер
+       
         try {
-            FileHandler fh = new FileHandler("log.txt");
+            FileHandler fh = new FileHandler(logFileName);
             logger.addHandler(fh);
 
             XMLFormatter xml = new XMLFormatter();
@@ -36,13 +36,12 @@ public class Task2 {
 
             logger.addHandler(fh);
 
-            printIntArray(bubbleSort(genArray(15, 100), logger));
         } catch (SecurityException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+        return logger;
     }
 
     public static int[] bubbleSort(int[] sortArr, Logger logger) {
@@ -62,7 +61,7 @@ public class Task2 {
         return sortArr;
     }
 
-    private static void printIntArray(int[] array) {
+    public static void printIntArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + ";\t");
         }
