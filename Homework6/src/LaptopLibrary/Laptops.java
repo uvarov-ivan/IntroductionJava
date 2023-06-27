@@ -2,7 +2,7 @@ package LaptopLibrary;
 
 import java.util.Objects;
 
-public class Laptops {
+public class Laptops { // Создал класс
     public int id;
     public String name;
     public double price;
@@ -13,7 +13,7 @@ public class Laptops {
     public int operMemory;
 
     public Laptops(int id, String name, double price, String os, String processor, String typeDrive, int meinMemory,
-            int operMemory) {
+            int operMemory) { // Определил класс
         this.id = id;
         this.name = name;
         this.price = price;
@@ -25,7 +25,7 @@ public class Laptops {
     }
 
     @Override
-    public String toString() {
+    public String toString() {//Переопределили формат печати эллументов класса
         return "Название = " + name + ", цена = " + price + " руб, операционная система = " + os + ", процессор = "
                 + processor
                 + ", вид накопителя = " + typeDrive + ", основная память = " + meinMemory + " GB, оперативная память = "
@@ -33,12 +33,12 @@ public class Laptops {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() { // Переопределили создание хэша
         return Objects.hash(id, name, os, operMemory, meinMemory);
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj) { // Переопределили алгоритм сравнения эллементов
         if (this == obj)
             return true;
         if (obj == null || getClass() != obj.getClass())
